@@ -14,7 +14,7 @@ dyn = []
 bus-mmio = []
 #bus-pci = ["dep:driver_pci", "dep:axhal", "dep:axconfig"]
 #net = ["driver_net"]
-#block = []
+block = []
 #display = ["driver_display"]
 
 # Enabled by features `virtio-*`
@@ -29,7 +29,7 @@ bus-mmio = []
 #ixgbe = ["net", "driver_net/ixgbe", "dep:axalloc", "dep:axhal"]
 # more devices example: e1000 = ["net", "driver_net/e1000"]
 
-default = ["bus-mmio"]
+default = ["bus-mmio", "block"]
 
 [dependencies]
 log = "0.4"

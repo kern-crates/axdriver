@@ -20,9 +20,11 @@ fn main() {
     } else {
         enable_cfg("bus", "mmio");
     }
+        enable_cfg("block_dev", "ramdisk");
 
     // Generate cfgs like `net_dev="virtio-net"`. if `dyn` is not enabled, only one device is
     // selected for each device category. If no device is selected, `dummy` is selected.
+    /*
     let is_dyn = has_feature("dyn");
     for (dev_kind, feat_list) in [
         ("net", NET_DEV_FEATURES),
@@ -47,4 +49,5 @@ fn main() {
             enable_cfg(&format!("{dev_kind}_dev"), "dummy");
         }
     }
+    */
 }
