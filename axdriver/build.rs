@@ -20,7 +20,10 @@ fn main() {
     } else {
         enable_cfg("bus", "mmio");
     }
-        enable_cfg("block_dev", "ramdisk");
+
+    // Todo: use menuconfig to distinguish ramdisk & virtio-blk
+        //enable_cfg("block_dev", "ramdisk");
+        enable_cfg("block_dev", "virtio-blk");
 
     // Generate cfgs like `net_dev="virtio-net"`. if `dyn` is not enabled, only one device is
     // selected for each device category. If no device is selected, `dummy` is selected.

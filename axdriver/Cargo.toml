@@ -18,10 +18,10 @@ block = []
 #display = ["driver_display"]
 
 # Enabled by features `virtio-*`
-#virtio = ["driver_virtio", "dep:axalloc", "dep:axhal", "dep:axconfig"]
+virtio = []
 
 # various types of drivers
-#virtio-blk = ["block", "virtio", "driver_virtio/block"]
+virtio-blk = ["virtio"]
 #virtio-net = ["net", "virtio", "driver_virtio/net"]
 #virtio-gpu = ["display", "virtio", "driver_virtio/gpu"]
 #ramdisk = ["block", "driver_block/ramdisk"]
@@ -29,7 +29,7 @@ block = []
 #ixgbe = ["net", "driver_net/ixgbe", "dep:axalloc", "dep:axhal"]
 # more devices example: e1000 = ["net", "driver_net/e1000"]
 
-default = ["bus-mmio", "block"]
+default = ["bus-mmio", "block", "virtio"]
 
 [dependencies]
 log = "0.4"
@@ -39,7 +39,7 @@ driver_block = { git = "ssh://git@github.com/shilei-massclouds/driver_block.git"
 #driver_net = { path = "../../crates/driver_net", optional = true }
 #driver_display = { path = "../../crates/driver_display", optional = true }
 #driver_pci = { path = "../../crates/driver_pci", optional = true }
-#driver_virtio = { path = "../../crates/driver_virtio", optional = true }
+driver_virtio = { git = "ssh://git@github.com/shilei-massclouds/driver_virtio.git" }
 axalloc = { git = "ssh://git@github.com/shilei-massclouds/axalloc.git" }
 axhal = { git = "ssh://git@github.com/shilei-massclouds/axhal.git" }
 axconfig = { git = "ssh://git@github.com/shilei-massclouds/axconfig.git" }
