@@ -12,7 +12,7 @@ documentation = "https://rcore-os.github.io/arceos/axdriver/index.html"
 [features]
 dyn = []
 bus-mmio = []
-#bus-pci = ["dep:driver_pci", "dep:axhal", "dep:axconfig"]
+bus-pci = []
 #net = ["driver_net"]
 block = []
 #display = ["driver_display"]
@@ -29,7 +29,7 @@ virtio-blk = ["virtio"]
 #ixgbe = ["net", "driver_net/ixgbe", "dep:axalloc", "dep:axhal"]
 # more devices example: e1000 = ["net", "driver_net/e1000"]
 
-default = ["bus-mmio", "block", "virtio"]
+default = ["bus-mmio", "block", "virtio", "bus-pci"]
 
 [dependencies]
 log = "0.4"
@@ -38,7 +38,7 @@ driver_common = { git = "ssh://git@github.com/shilei-massclouds/driver_common.gi
 driver_block = { git = "ssh://git@github.com/shilei-massclouds/driver_block.git" }
 #driver_net = { path = "../../crates/driver_net", optional = true }
 #driver_display = { path = "../../crates/driver_display", optional = true }
-#driver_pci = { path = "../../crates/driver_pci", optional = true }
+driver_pci = { git = "ssh://git@github.com/shilei-massclouds/driver_pci.git" }
 driver_virtio = { git = "ssh://git@github.com/shilei-massclouds/driver_virtio.git" }
 axalloc = { git = "ssh://git@github.com/shilei-massclouds/axalloc.git" }
 axhal = { git = "ssh://git@github.com/shilei-massclouds/axhal.git" }
