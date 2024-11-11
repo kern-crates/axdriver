@@ -71,6 +71,8 @@ mod bus;
 mod drivers;
 mod dummy;
 mod structs;
+mod disk;
+pub use disk::Disk;
 
 #[cfg(feature = "virtio")]
 mod virtio;
@@ -148,7 +150,7 @@ impl AllDevices {
 }
 
 /// Probes and initializes all device drivers, returns the [`AllDevices`] struct.
-pub fn init_drivers() -> AllDevices {
+pub fn init_drivers2() -> AllDevices {
     info!("Initialize device drivers...");
     info!("  device model: {}", AllDevices::device_model());
 
